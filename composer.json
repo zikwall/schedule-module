@@ -1,0 +1,28 @@
+{
+  "name": "zikwall/schedule-module",
+  "description": "Class schedule for educational institutions",
+  "keywords": ["yii2", "module", "schedule", "humhub", "extension"],
+  "type": "yii2-extension",
+  "support": {
+    "issues": "https://github.com/zikwall/schedule-module/issues?state=open",
+    "source": "https://github.com/zikwall/schedule-module"
+  },
+  "authors": [
+    {
+      "name": "Andrey Kapitonov",
+      "email": "andrey.kapitonov.96@gmall.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "donquixote/cellbrush": "^1.0",
+    "kartik-v/yii2-widget-select2": "@dev",
+    "kartik-v/yii2-widget-colorinput": "*",
+    "kartik-v/yii2-widget-depdrop": "@dev"
+  },
+  "autoload": {
+      "psr-4": {
+            "zikwall\\schedule\\": ""
+      }
+  }
+}
