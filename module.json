@@ -1,0 +1,12 @@
+{
+    "id": "schedule",
+    "name": "Расписание занятий",
+    "description": "Функциональный модуль расписания занятий для учебных заведений",
+    "keywords": [
+    ],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "0.8"
+    },
+    "screenshots": ["assets/screen1.jpg"]
+}
