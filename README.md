@@ -44,6 +44,7 @@
    - - View audience details
    - - View the details of the enclosure
    - - View teacher details
+   - - Automatic detection of the current week and color highlighting of the relevant activities
 
 ### To Install Manual
 - upload all files to `protected/modules/schedule/`
@@ -106,3 +107,4 @@
 - - Просмотр подробностей аудитории
 - - Просмотр подробнестей корпуса
 - - Просмотр подробностей преподавателя
+- - Автоматическое определение текущей недели и цветовое выделение соответствующих занятий
