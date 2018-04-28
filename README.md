@@ -16,6 +16,7 @@
    - Convenient management interface
    - - Drop-down lists
    - - Linked lists
+   - Notification of users
 
    ## for users:
    - Three types of timetable:
@@ -50,6 +51,15 @@
 - upload all files to `protected/modules/schedule/`
 - init module in admin setting and in your profiles
 
+## Screenshots
+
+![Alt text](https://imageshack.com/a/img924/246/05yIiC.jpg "Optional title")
+![Alt text](https://imageshack.com/a/img924/7885/mxW0op.jpg "Optional title")
+![Alt text](https://imageshack.com/a/img924/184/Vjzqi7.jpg "Optional title")
+![Alt text](https://imageshack.com/a/img922/7417/UJoZMN.jpg "Optional title")
+![Alt text](https://imageshack.com/a/img923/4657/6n2jzF.jpg "Optional title")
+![Alt text](https://imageshack.com/a/img923/632/Dww8c6.jpg "Optional title")
+
 
 ## Возможности
 
@@ -79,6 +89,7 @@
 - Удобный интерфейс управления
 - - Выпадающие списки
 - - Связанные списки
+- Оповещение пользователей
 
 ## для пользователей
 - Три вида расписания:
