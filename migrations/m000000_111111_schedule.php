@@ -1,8 +1,5 @@
 <?php
 
-/**
- * @author Andrey Kapitonov <dj-on-ik@mail.com>
- */
 class m000000_111111_schedule extends \yii\db\Migration
 {
     public $prefix = 'schedule_';
@@ -196,10 +193,11 @@ class m000000_111111_schedule extends \yii\db\Migration
             'profile_id' => $this->integer()->notNull(),
             'course_id' => $this->integer()->notNull(),
             'space_id' => $this->integer()->null(),
-            'name' => $this->string(20)->notNull(),
+            'chair_id' => $this->integer()->notNull(),
+            'name' => $this->string(20)->notNull()->comment('programm name: group_51_2'),
             'displayName' => $this->string(100)->notNull(),
             'en_name' => $this->string(100)->null()->comment('i18n field'),
-            'year' => $this->date()->notNull(),
+            'year' => $this->date()->notNull()->comment('year of receipt'),
             'desc' => $this->string(200)->null(),
             'color' => $this->string(7)->defaultValue('#6fdbe8'),
         ], '');
@@ -237,6 +235,7 @@ class m000000_111111_schedule extends \yii\db\Migration
             ],
             6 => [
                 'profile_id' => 1,
+                'chair_id' => 1,
                 'name' => 'гр_51',
                 'displayName' => 'ЭК-051-14',
                 'date' => 2014
@@ -267,6 +266,7 @@ class m000000_111111_schedule extends \yii\db\Migration
             ],
             11 => [
                 'profile_id' => 10,
+                'chair_id' => 3,
                 'name' => 'гр_09',
                 'displayName' => 'ЭК-09-14',
                 'date' => 2014
@@ -312,6 +312,7 @@ class m000000_111111_schedule extends \yii\db\Migration
             ],
             7 => [
                 'profile_id' => 1,
+                'chair_id' => 1,
                 'name' => 'гр_51',
                 'displayName' => 'ЭК-051-17',
                 'date' => 2017
@@ -336,9 +337,147 @@ class m000000_111111_schedule extends \yii\db\Migration
             ],
             11 => [
                 'profile_id' => 10,
+                'chair_id' => 3,
                 'name' => 'гр_09',
                 'displayName' => 'ЭК-09-17',
                 'date' => 2017
+            ],
+        ];
+
+        $studyGroups3 = [
+            1 => [
+                'profile_id' => 5,
+                'name' => 'гр_01',
+                'displayName' => 'ЭК-01-16',
+            ],
+            2 => [
+                'profile_id' => 8,
+                'name' => 'гр_021',
+                'displayName' => 'ЭК-021-16',
+            ],
+            3 => [
+                'profile_id' => 8,
+                'name' => 'гр_022',
+                'displayName' => 'ЭК-022-16',
+            ],
+            4 => [
+                'profile_id' => 6,
+                'name' => 'гр_31',
+                'displayName' => 'ЭК-031-16',
+            ],
+            5 => [
+                'profile_id' => 6,
+                'name' => 'гр_32',
+                'displayName' => 'ЭК-032-16',
+            ],
+            6 => [
+                'profile_id' => 7,
+                'name' => 'гр_04',
+                'displayName' => 'ЭК-04-16',
+            ],
+            7 => [
+                'profile_id' => 1,
+                'chair_id' => 1,
+                'name' => 'гр_51',
+                'displayName' => 'ЭК-051-16',
+            ],
+            8 => [
+                'profile_id' => 4,
+                'name' => 'гр_06',
+                'displayName' => 'ЭК-06-16',
+            ],
+            9 => [
+                'profile_id' => 3,
+                'name' => 'гр_07',
+                'displayName' => 'ЭК-07-16',
+            ],
+            10 => [
+                'profile_id' => 9,
+                'name' => 'гр_081',
+                'displayName' => 'ЭК-081-16',
+            ],
+            11 => [
+                'profile_id' => 9,
+                'name' => 'гр_082',
+                'displayName' => 'ЭК-082-16',
+            ],
+            12 => [
+                'profile_id' => 10,
+                'chair_id' => 3,
+                'name' => 'гр_091',
+                'displayName' => 'ЭК-091-16',
+            ],
+            13 => [
+                'profile_id' => 10,
+                'chair_id' => 3,
+                'name' => 'гр_092',
+                'displayName' => 'ЭК-092-16',
+            ],
+        ];
+
+        $studyGroups4 = [
+            1 => [
+                'profile_id' => 5,
+                'name' => 'гр_01',
+                'displayName' => 'ЭК-01-15',
+            ],
+            2 => [
+                'profile_id' => 8,
+                'name' => 'гр_02',
+                'displayName' => 'ЭК-02-15',
+            ],
+            3 => [
+                'profile_id' => 6,
+                'name' => 'гр_31',
+                'displayName' => 'ЭК-031-15',
+            ],
+            4 => [
+                'profile_id' => 6,
+                'name' => 'гр_32',
+                'displayName' => 'ЭК-032-15',
+            ],
+            5 => [
+                'profile_id' => 7,
+                'name' => 'гр_04',
+                'displayName' => 'ЭК-04-15',
+            ],
+            6 => [
+                'profile_id' => 1,
+                'chair_id' => 1,
+                'name' => 'гр_51',
+                'displayName' => 'ЭК-051-15',
+            ],
+            61 => [
+                'profile_id' => 1,
+                'chair_id' => 1,
+                'name' => 'гр_52',
+                'displayName' => 'ЭК-052-15',
+            ],
+            7 => [
+                'profile_id' => 4,
+                'name' => 'гр_06',
+                'displayName' => 'ЭК-06-15',
+            ],
+            8 => [
+                'profile_id' => 3,
+                'name' => 'гр_07',
+                'displayName' => 'ЭК-07-15',
+            ],
+            9 => [
+                'profile_id' => 9,
+                'name' => 'гр_81',
+                'displayName' => 'ЭК-081-15',
+            ],
+            10 => [
+                'profile_id' => 9,
+                'name' => 'гр_82',
+                'displayName' => 'ЭК-082-15',
+            ],
+            11 => [
+                'profile_id' => 10,
+                'chair_id' => 3,
+                'name' => 'гр_09',
+                'displayName' => 'ЭК-09-15',
             ],
         ];
 
@@ -357,6 +496,7 @@ class m000000_111111_schedule extends \yii\db\Migration
                 'faculty_id' => 1,
                 'profile_id' => $group['profile_id'],
                 'course_id' => 4,
+                'chair_id' => empty($group['chair_id']) ? rand(1, 6) : $group['chair_id'],
                 'name' => $group['name'],
                 'displayName' => $group['displayName'],
                 'year' => $group['date'],
@@ -379,12 +519,71 @@ class m000000_111111_schedule extends \yii\db\Migration
                 'faculty_id' => 1,
                 'profile_id' => $group2['profile_id'],
                 'course_id' => 1,
+                'chair_id' => empty($group2['chair_id']) ? rand(1, 6) : $group2['chair_id'],
                 'name' => $group2['name'],
                 'displayName' => $group2['displayName'],
                 'year' => $group2['date'],
                 'color' => $colors[$color]
             ]);
         }
+
+        foreach ($studyGroups3 as $group3){
+            $color = rand(1, 5);
+
+            $colors = [
+                1 => '#6fdbe8',
+                2 => '#43c522',
+                3 => '#c522a2',
+                4 => '#f1950b',
+                5 => '#590bf1',
+            ];
+
+            $this->insert('{{%university_study_groups}}', [
+                'faculty_id' => 1,
+                'profile_id' => $group3['profile_id'],
+                'course_id' => 2,
+                'chair_id' => empty($group3['chair_id']) ? rand(1, 6) : $group3['chair_id'],
+                'name' => $group3['name'],
+                'displayName' => $group3['displayName'],
+                'year' => 2016,
+                'color' => $colors[$color]
+            ]);
+        }
+
+        foreach ($studyGroups4 as $group4){
+            $color = rand(1, 5);
+
+            $colors = [
+                1 => '#6fdbe8',
+                2 => '#43c522',
+                3 => '#c522a2',
+                4 => '#f1950b',
+                5 => '#590bf1',
+            ];
+
+            $this->insert('{{%university_study_groups}}', [
+                'faculty_id' => 1,
+                'profile_id' => $group4['profile_id'],
+                'course_id' => 3,
+                'chair_id' => empty($group4['chair_id']) ? rand(1, 6) : $group4['chair_id'],
+                'name' => $group4['name'],
+                'displayName' => $group4['displayName'],
+                'year' => 2015,
+                'color' => $colors[$color]
+            ]);
+        }
+
+        // 5 курс
+        $this->insert('{{%university_study_groups}}', [
+            'faculty_id' => 1,
+            'profile_id' => 10,
+            'course_id' => 5,
+            'chair_id' => 3,
+            'name' => 'гр_09',
+            'displayName' => 'ЭК-09-13',
+            'year' => 2013,
+            'color' => '#590bf1'
+        ]);
 
         $this->addForeignKey(
             'fa_study_groups_faculty',
@@ -411,6 +610,16 @@ class m000000_111111_schedule extends \yii\db\Migration
             '{{%university_study_groups}}',
             'course_id',
             '{{%university_study_courses}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->addForeignKey(
+            'fa_study_groups_chair',
+            '{{%university_study_groups}}',
+            'chair_id',
+            '{{%university_faculty_chair}}',
             'id',
             'CASCADE',
             'CASCADE'
@@ -1129,6 +1338,7 @@ class m000000_111111_schedule extends \yii\db\Migration
             'discipline_id' => $this->integer()->notNull(),
             'study_group_id' => $this->integer()->notNull(),
             'type_id' => $this->integer()->notNull(),
+            'half_year' => $this->integer()->notNull()->defaultValue(2),
             'en_name' => $this->string(100)->null()->comment('i18n field'),
             'desc' => $this->string(200)->null(),
         ], '');
@@ -1476,6 +1686,87 @@ class m000000_111111_schedule extends \yii\db\Migration
                 'CASCADE'
             );
         }
+        // ToDo: move to faculties migrations
+        $this->createTable('{{%university_faculty_chairtimes}}', [
+            'id' => $this->primaryKey(),
+            'chair_id' => $this->integer()->notNull(),
+            'signature_id' => $this->integer()->comment('responsible who signed')
+        ], '');
+
+        $this->addForeignKey(
+            'fa_chairtimes_to_chair',
+            '{{%university_faculty_chairtimes}}',
+            'chair_id',
+            '{{%university_faculty_chair}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->addForeignKey(
+            'fa_chairtimes_to_signature',
+            '{{%university_faculty_chairtimes}}',
+            'signature_id',
+            '{{%university_teachers}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->createTable('{{%university_faculty_chairtimes_assignee}}', [
+            'id' => $this->primaryKey(),
+            'chairtimes_id' => $this->integer()->notNull(),
+            'teacher_id' => $this->integer()
+        ], '');
+
+        $this->addForeignKey(
+            'fa_chairtimes_assignee_to_chairtime',
+            '{{%university_faculty_chairtimes_assignee}}',
+            'chairtimes_id',
+            '{{%university_faculty_chairtimes}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->addForeignKey(
+            'fa_chairtimes_assignee_to_teacher',
+            '{{%university_faculty_chairtimes_assignee}}',
+            'teacher_id',
+            '{{%university_teachers}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->createTable('{{%university_faculty_chairtimes_assignee_times}}', [
+            'id' => $this->primaryKey(),
+            'chairtimes_assignee_id' => $this->integer()->notNull(),
+            'day_id' => $this->integer()->notNull(),
+            'time' => $this->time()->null()
+        ], '');
+
+        $this->addForeignKey(
+            'fa_chairtimes_assignee_to_times_to_chairtimes',
+            '{{%university_faculty_chairtimes_assignee_times}}',
+            'chairtimes_assignee_id',
+            '{{%university_faculty_chairtimes_assignee}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        $this->addForeignKey(
+            'fa_chairtimes_assignee_to_times_to_day',
+            '{{%university_faculty_chairtimes_assignee_times}}',
+            'day_id',
+            '{{%schedule_aviable_day}}',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
+        // end ToDo.
 
         //$this->addColumn('{{%user}}', 'study_group_id', $this->integer()->null());
     }
@@ -1515,6 +1806,10 @@ class m000000_111111_schedule extends \yii\db\Migration
         $this->dropForeignKey('fa_link_to_schedule', '{{%schedule_link_subgroups}}');
         $this->dropForeignKey('fa_link_to_subgroup', '{{%schedule_link_subgroups}}');
 
+        // toDo: move to faculties mogrations
+        $this->dropForeignKey('fa_chairtimes_to_chair', '{{%university_faculty_chair_times}}');
+        $this->dropForeignKey('fa_chairtimes_to_teacher', '{{%university_faculty_chair_times}}');
+
         /*$this->dropColumn('{{%user}}', 'role');
         $this->dropColumn('{{%user}}', 'basis_education');
         $this->dropColumn('{{%user}}', 'form_education');
@@ -1541,6 +1836,9 @@ class m000000_111111_schedule extends \yii\db\Migration
         $this->dropTable('{{%schedule_headers}}'); //
         $this->dropTable('{{%schedule_link_subgroups}}'); //
         $this->dropTable('{{%schedule_subgroups}}'); //
+
+        $this->dropTable('{{%university_faculty_chair_times}}'); //
+
     }
 
     public function getLoremText()

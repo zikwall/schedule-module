@@ -11,6 +11,7 @@ class uninstall extends \yii\db\Migration
         $this->dropForeignKey('fa_study_groups_profile', '{{%university_study_groups}}');
         $this->dropForeignKey('fa_study_groups_faculty', '{{%university_study_groups}}');
         $this->dropForeignKey('fa_study_groups_course', '{{%university_study_groups}}'); //
+        $this->dropForeignKey('fa_study_groups_chair', '{{%university_study_groups}}'); //
         //$this->dropForeignKey('fa_user_role', '{{%user}}'); //
         $this->dropForeignKey('fa_teacher_user', '{{%university_teachers}}');
         $this->dropForeignKey('fa_teacher_position', '{{%university_teachers}}');
@@ -54,6 +55,15 @@ class uninstall extends \yii\db\Migration
             $this->dropTable('{{%schedule_link_issues}}');
         }
 
+        // ToDo: move to faculties mogrations
+        $this->dropForeignKey('fa_chairtimes_to_chair', '{{%university_faculty_chairtimes}}');
+        $this->dropForeignKey('fa_chairtimes_to_signature', '{{%university_faculty_chairtimes}}');
+        $this->dropForeignKey('fa_chairtimes_assignee_to_chairtime', '{{%university_faculty_chairtimes_assignee}}');
+        $this->dropForeignKey('fa_chairtimes_assignee_to_teacher', '{{%university_faculty_chairtimes_assignee}}');
+        $this->dropForeignKey('fa_chairtimes_assignee_to_times_to_chairtimes', '{{%university_faculty_chairtimes_assignee_times}}');
+        $this->dropForeignKey('fa_chairtimes_assignee_to_times_to_day', '{{%university_faculty_chairtimes_assignee_times}}');
+        // end ToDo.
+
         $this->dropTable('{{%schedule_aviable_day}}');
         $this->dropTable('{{%schedule_aviable_couple}}');
         $this->dropTable('{{%university_study_groups}}');  //
@@ -74,5 +84,11 @@ class uninstall extends \yii\db\Migration
         $this->dropTable('{{%schedule_headers}}'); //
         $this->dropTable('{{%schedule_link_subgroups}}'); //
         $this->dropTable('{{%schedule_subgroups}}'); //
+
+        // ToDo: move to faculties mogrations
+        $this->dropTable('{{%university_faculty_chairtimes}}');
+        $this->dropTable('{{%university_faculty_chairtimes_assignee}}');
+        $this->dropTable('{{%university_faculty_chairtimes_assignee_times}}');
+        // end ToDo.
     }
 }
