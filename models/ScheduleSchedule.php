@@ -53,7 +53,8 @@ class ScheduleSchedule extends ActiveRecord
     public $formSubgroup = '';
     public $formIssuees = '';
 
-    const SCENARIO_ISSUES = 'issues';
+    const SCENARIO_ISSUES = 'SCENARIO_ISSUES';
+    const SCENARIO_GENERAL = 'SCENARIO_GENERAL';
 
     /**
      * @inheritdoc
