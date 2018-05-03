@@ -15,6 +15,8 @@ class ScheduleFilterWidget extends Widget
     public $groups;
     public $groupsAll;
     public $classrooms;
+    public $profiles;
+    public $specialities;
 
     public $course;
     public $faculty;
@@ -43,6 +45,8 @@ class ScheduleFilterWidget extends Widget
             'groups' => $this->groups,
             'groupsAll' => $this->groupsAll,
             'classrooms' => $this->classrooms,
+            'profiles' => $this->profiles,
+            'specialities' => $this->specialities,
             'group' => $this->group,
             'course' => $this->course,
             'faculty' => $this->faculty,

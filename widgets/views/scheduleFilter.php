@@ -40,7 +40,7 @@ use yii\bootstrap\ActiveForm;
                     <br><label>По преподавателям</label>
                     <?= Html::dropDownList('teachers', $teachers, \humhub\modules\university\models\UniversityTeachers::getListLikeFacultyAndCourse($faculty, $course) ,[
                         'multiple' => true,
-                        'id' => 'discipline-id',
+                        'id' => 'teacher-id',
                         'data-ui-select2' => ''
                     ]); ?>
                     <?php else: ?>
@@ -53,7 +53,7 @@ use yii\bootstrap\ActiveForm;
                     <br><label>По преподавателям</label>
                     <?= Html::dropDownList('teachers', $teachers, \humhub\modules\university\models\UniversityTeachers::getListLikeGroup($group) ,[
                         'multiple' => true,
-                        'id' => 'discipline-id',
+                        'id' => 'teacher-id',
                         'data-ui-select2' => ''
                     ]); ?>
                     <?php endif; ?>
@@ -71,14 +71,14 @@ use yii\bootstrap\ActiveForm;
                     <p class="panel-heading">По учебным группам (которые есть в расписании)</p>
                     <?= Html::dropDownList('groups', $groups, \humhub\modules\university\models\UniversityStudyGroups::getListLikeFacultyAndCourse($faculty, $course) ,[
                         'multiple' => true,
-                        'id' => 'discipline-id',
+                        'id' => 'group-id',
                         'data-ui-select2' => ''
                     ]); ?>
                     <hr>
                     <p class="panel-heading">По всем учебным группам</p>
                     <?= Html::dropDownList('groupsAll', $groupsAll, \humhub\modules\university\models\UniversityStudyGroups::getListAllLikeFacultyAndCourse($faculty, $course) ,[
                         'multiple' => true,
-                        'id' => 'discipline-id',
+                        'id' => 'group-all-id',
                         'data-ui-select2' => ''
                     ]); ?>
                 </div>
@@ -87,7 +87,23 @@ use yii\bootstrap\ActiveForm;
                     <p class="panel-heading">По аудиториям</p>
                     <?= Html::dropDownList('classrooms', $classrooms, \humhub\modules\faculties\models\UniversityBuildingClassroom::getListLikeFacultyAndCourse($faculty, $course) ,[
                         'multiple' => true,
-                        'id' => 'discipline-id',
+                        'id' => 'classroom-id',
+                        'data-ui-select2' => ''
+                    ]); ?>
+
+                    <hr>
+                    <p class="panel-heading">По профилям обучения</p>
+                    <?= Html::dropDownList('profiles', $profiles, \humhub\modules\specialities\models\UniversitySpecialitiesProfiles::getListLikeFacultyAndCourse($faculty, $course) ,[
+                        'multiple' => true,
+                        'id' => 'profile-id',
+                        'data-ui-select2' => ''
+                    ]); ?>
+
+                    <hr>
+                    <p class="panel-heading">По специальностям обучения</p>
+                    <?= Html::dropDownList('specialities', $specialities, \humhub\modules\specialities\models\UniversitySpecialities::getListLikeFacultyAndCourse($faculty, $course) ,[
+                        'multiple' => true,
+                        'id' => 'speciality-id',
                         'data-ui-select2' => ''
                     ]); ?>
                 </div>

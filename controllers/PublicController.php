@@ -11,6 +11,7 @@ use humhub\modules\schedule\models\ScheduleHelper;
 use humhub\modules\schedule\models\ScheduleAviableCouple;
 use humhub\modules\schedule\models\ScheduleAviableDay;
 use humhub\modules\schedule\models\ScheduleSchedule;
+use humhub\modules\specialities\models\UniversitySpecialitiesProfiles;
 use humhub\modules\university\models\ScheduleUserLink;
 use humhub\modules\university\models\UniversityStudyGroups;
 use humhub\modules\university\models\UniversityTeachers;
@@ -51,6 +52,9 @@ class PublicController extends Controller
         return $this->render('about-schedule');
     }
 
+    /**
+     * ToDo: create query service for filtering and matching
+     */
     public function actionGlobal($faculty, $course = 1, $profile = null, $group = null)
     {
         $request = Yii::$app->request;
@@ -61,6 +65,17 @@ class PublicController extends Controller
 
         if ($groupIds = $request->post('groups', [])) {
             $studyGroups->andWhere(['in', 'id', $groupIds]);
+        }
+
+        if ($profileIds = $request->post('profiles', [])) {
+            $studyGroups->andWhere(['in', 'profile_id', $profileIds]);
+        }
+
+        if ($specialityIds = $request->post('specialities', [])) {
+            $studyGroups->leftJoin(
+                UniversitySpecialitiesProfiles::tableName().' sp',
+                'sp.id = '.UniversityStudyGroups::tableName().'.profile_id'
+            )->andWhere(['in', 'sp.speciality_id', $specialityIds]);
         }
 
         if ($groupAllIds = $request->post('groupsAll', [])) {
@@ -186,7 +201,9 @@ class PublicController extends Controller
             'teachers' => $teacherIds,
             'groups' => $groupIds,
             'groupsAll' => $groupAllIds,
-            'classrooms' => $classroomIds
+            'classrooms' => $classroomIds,
+            'profiles' => $profileIds,
+            'specialities' => $specialityIds
         ]);
     }
 

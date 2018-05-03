@@ -246,13 +246,19 @@ class ScheduleHelper
         ], ['class' => 'panel-collapse',]);
 
         $ulEnd .= '</li>';
-        $ulEnd .= '<li>';
 
+        $ulEnd .= '<li>';
+        $ulEnd .= Html::a('<i class="fa fa-address-card-o"></i> Кафедра', Url::to(['/faculties/public-chair/information', 'id' => $group->profile->speciality->chair->id]), [
+            'class' => 'panel-collapse',
+            'data-target' => '#globalModal',
+        ]);
+        $ulEnd .= '</li>';
+
+        $ulEnd .= '<li>';
         $ulEnd .= Html::a('<i class="fa fa-info-circle"></i> Информация', Url::to(['/specialities/public-profiles/information', 'id' => $group->profile->id]), [
             'class' => 'panel-collapse',
             'data-target' => '#globalModal',
         ]);
-
         $ulEnd .= '</li>';
 
         if(Yii::$app->user->can(new ManageEducationProfiles())){
@@ -309,7 +315,6 @@ class ScheduleHelper
     public static $teachers = null;
     public static $types = null;
     public static $classrooms = null;
-    public static $profiles = null;
 
     /**
      * @param $day
@@ -344,11 +349,6 @@ class ScheduleHelper
 
         if(is_array(static::$classrooms)){
             $query->andWhere(['in', 'classroom_id', static::$classrooms]);
-        }
-
-        if(is_array(static::$profiles)){
-            $query->leftJoin(UniversityStudyGroups::tableName().' sg', 'sg.id = study_group_id')
-                ->andWhere(['in', 'sg.profile_id', static::$profiles]);
         }
 
         return $query->all();

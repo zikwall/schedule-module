@@ -26,11 +26,9 @@ use humhub\libs\Html;
 
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3">
-                <div class="pull-left">
-                    <div class="">
-                        <?= ($pagination != null) ? \humhub\widgets\LinkPager::widget(['pagination' => $pagination]) : ''; ?>
-                    </div>
+            <div class="col-md-3 pull-left">
+                <div class="pagination">
+                    <?= ($pagination != null) ? \humhub\widgets\LinkPager::widget(['pagination' => $pagination]) : ''; ?>
                 </div>
             </div>
             <br>
@@ -50,13 +48,12 @@ use humhub\libs\Html;
         </div>
 
         <?= \humhub\modules\schedule\widgets\ScheduleFilterWidget::widget([
-                'days' => $days, 'couples' => $couples, 'weekly' => $weekly, 'disciplines' => $disciplines, 'teachers' => $teachers,
-                'types' => $types, 'groups' => $groups, 'groupsAll' => $groupsAll, 'classrooms' => $classrooms
+            'days' => $days, 'couples' => $couples, 'weekly' => $weekly, 'disciplines' => $disciplines, 'teachers' => $teachers,
+            'types' => $types, 'groups' => $groups, 'groupsAll' => $groupsAll, 'classrooms' => $classrooms, 'profiles' => $profiles,
+            'specialities' => $specialities
         ]); ?>
 
     </div>
 </div>
 
 <?= $table->render();?>
-
-
